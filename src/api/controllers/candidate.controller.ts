@@ -7,7 +7,7 @@ export class CandidateController {
 
 
     get(req: Request, res: Response): void {
-        res.status(404).send();
+        res.status(200).send("yoooooooooh");
     }
 
     find(req: Request, res: Response): void {

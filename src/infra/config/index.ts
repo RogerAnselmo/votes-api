@@ -1,4 +1,5 @@
-import { ConfigurationType } from "./TypeDefinition";
+import { cliConfig } from "./database";
+import { ConfigurationType, DatabaseConfig } from "./TypeDefinition";
 
 const Configuration = {
     PORT: Number(process.env.PORT),
@@ -7,4 +8,25 @@ const Configuration = {
     RUNNING_SERVER_MESSAGE: process.env.RUNNING_SERVER_MESSAGE
 } as ConfigurationType
 
-export default Configuration;
+const Database = {
+    type: process.env.DATABASE_POSTGRES_TYPE,
+    host: process.env.DATABASE_POSTGRES_HOST,
+    port: Number(process.env.DATABASE_POSTGRES_PORT),
+    username: process.env.DATABASE_POSTGRES_NAME,
+    password: process.env.DATABASE_POSTGRES_PASSWORD,
+    database: process.env.DATABASE_POSTGRES_NAME,
+    synchronize: true,
+    logging: false,
+    entities: [
+        "src/core/models/*.model.ts"
+    ],
+    migrations: [
+        "src/infra/migrations/*.ts"
+    ],
+    cli: {
+        migrationsDir: "src/infra/migrations"
+    } as cliConfig
+} as DatabaseConfig
+
+
+export default {Configuration, Database}
