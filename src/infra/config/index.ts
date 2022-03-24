@@ -1,14 +1,14 @@
 import { cliConfig } from "./database";
 import { ConfigurationType, DatabaseConfig } from "./TypeDefinition";
 
-const Configuration = {
+export const Configuration = {
     PORT: Number(process.env.PORT),
     ENV: process.env.NODE_ENV,
     STARTED_SERVER_MESSAGE: `server listening on PORT = ${process.env.PORT}`,
     RUNNING_SERVER_MESSAGE: process.env.RUNNING_SERVER_MESSAGE
 } as ConfigurationType
 
-const Database = {
+export const Database = {
     type: process.env.DATABASE_POSTGRES_TYPE,
     host: process.env.DATABASE_POSTGRES_HOST,
     port: Number(process.env.DATABASE_POSTGRES_PORT),

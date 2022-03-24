@@ -7,13 +7,4 @@ export class Candidate {
 
     @Column({nullable: false})
     name: string;
-
-    @Column({nullable: false})
-    braza: string;
-
-    @Column({nullable: false})
-    brazante: string;
-
-    @Column({nullable: false})
-    chaama: string;
 }
