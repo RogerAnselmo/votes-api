@@ -5,8 +5,6 @@ import { Candidate } from '../models/candidate.model';
 
 @Service()
 export class CandidatesService {
-  // @InjectRepository(Candidate)
-  // private readonly repository: Repository<Candidate>;
   constructor(
     @InjectRepository(Candidate) private repository: Repository<Candidate>,
   ) {}
