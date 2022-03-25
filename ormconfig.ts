@@ -3,7 +3,7 @@ export default {
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: 'postgres',
+    password: 'p@ssw0rd',
     database: 'postgres',
     synchronize: true,
     entities: [

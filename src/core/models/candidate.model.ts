@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Contest } from './contest.model';
 
 @Entity()
 export class Candidate {
@@ -7,4 +8,7 @@ export class Candidate {
 
   @Column({ nullable: false })
   name: string;
+
+  @ManyToMany(() => Contest, contest => contest.candidates)
+  contests: Contest[];
 }
