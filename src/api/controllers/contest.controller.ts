@@ -1,10 +1,11 @@
-import { ContestsServcie } from 'core/services/contests.service';
+
+import { ContestServcie } from '../../core/services/contest.service';
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
 
 @Service()
 export class ContestController {
-  constructor(private service: ContestsServcie) {}
+  constructor(private service: ContestServcie) {}
 
   async post(req: Request, res: Response): Promise<void> {
     await this.service.create(req.body);

@@ -8,7 +8,4 @@ export class Candidate {
 
   @Column({ nullable: false })
   name: string;
-
-  @ManyToMany(() => Contest, contest => contest.candidates)
-  contests: Contest[];
 }

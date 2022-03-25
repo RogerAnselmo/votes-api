@@ -1,6 +1,7 @@
 import {
   Column,
   Entity,
+  JoinTable,
   ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -19,6 +20,7 @@ export class Contest {
   @OneToMany(() => Vote, vote => vote.contest)
   votes: Vote[];
 
-  @ManyToMany(() => Candidate, candidate => candidate.contests, { eager: true })
+  @ManyToMany(() => Candidate, {eager: true})
+  @JoinTable()
   candidates: Candidate[];
 }

@@ -1,11 +1,11 @@
 import { Candidate } from '../../core/models/candidate.model';
-import { CandidatesService } from '../../core/services/candidates.services';
+import { CandidateService } from '../../core/services/candidate.services';
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
 
 @Service()
 export class CandidateController {
-  constructor(private service: CandidatesService) {}
+  constructor(private service: CandidateService) {}
 
   async create(req: Request, res: Response): Promise<void> {
     await this.service.save(req.body as Candidate);
