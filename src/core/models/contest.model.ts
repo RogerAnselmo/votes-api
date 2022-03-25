@@ -19,6 +19,6 @@ export class Contest {
   @OneToMany(() => Vote, vote => vote.contest)
   votes: Vote[];
 
-  @ManyToMany(() => Candidate, candidate => candidate.contests)
+  @ManyToMany(() => Candidate, candidate => candidate.contests, { eager: true })
   candidates: Candidate[];
 }

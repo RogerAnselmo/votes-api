@@ -20,11 +20,11 @@ export class Vote {
   })
   date: Date;
 
-  @OneToOne(() => Candidate)
+  @OneToOne(() => Candidate, { eager: true })
   @JoinColumn({ name: 'candidate_id' })
   candidate: Candidate;
 
-  @OneToOne(()=> Contest)
-  @JoinColumn({name: 'contest_id'})
+  @OneToOne(() => Contest, { eager: true })
+  @JoinColumn({ name: 'contest_id' })
   contest: Contest;
 }
