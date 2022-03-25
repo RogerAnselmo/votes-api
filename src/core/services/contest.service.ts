@@ -6,14 +6,14 @@ import { InjectRepository } from 'typeorm-typedi-extensions';
 @Service()
 export class ContestServcie {
   constructor(
-    @InjectRepository(Contest) private contestRepository: Repository<Contest>,
+    @InjectRepository(Contest) private repository: Repository<Contest>,
   ) {}
 
   async create(contest: Contest): Promise<void> {
-    await this.contestRepository.save(contest);
+    await this.repository.save(contest);
   }
 
   async get(): Promise<Contest[]> {
-    return await this.contestRepository.find({});
+    return await this.repository.find({});
   }
 }
