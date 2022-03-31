@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { CandidateController } from '../controllers/candidate.controller';
+import { CandidateController } from '@controllers/candidate.controller';
 import { Request, Response } from 'express';
 import Container from 'typedi';
 

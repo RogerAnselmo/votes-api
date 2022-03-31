@@ -6,8 +6,8 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Candidate } from './candidate.model';
-import { Contest } from './contest.model';
+import { Candidate } from '@models/candidate.model';
+import { Contest } from '@models/contest.model';
 
 @Entity()
 export class Vote {
@@ -20,11 +20,17 @@ export class Vote {
   })
   date: Date;
 
-  @OneToOne(() => Candidate, { eager: true })
+  @OneToOne(() => Candidate)
   @JoinColumn({ name: 'candidate_id' })
   candidate: Candidate;
+
+  @Column()
+  candidate_id!: string;
 
   @OneToOne(() => Contest, { eager: true })
   @JoinColumn({ name: 'contest_id' })
   contest: Contest;
+
+  @Column()
+  contest_id!: string;
 }

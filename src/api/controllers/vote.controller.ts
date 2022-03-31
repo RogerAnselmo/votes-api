@@ -1,4 +1,4 @@
-import { VoteService } from '../../core/services/vote.service';
+import { VoteService } from '@services/vote.service';
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
 
@@ -11,7 +11,17 @@ export class VoteController {
     res.status(201).send('your vote was successfully stored');
   }
 
+  async get(req: Request, res: Response) {
+    res.status(200).json(await this.service.get());
+  }
+
   async getByContestId(req: Request, res: Response): Promise<void> {
-    res.status(200).json(await this.service.getByContestId(req.params.id));
+    try {
+      console.log(req.params.id)
+      res.status(200).json(await this.service.getByContestId(req.params.id));
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
   }
 }

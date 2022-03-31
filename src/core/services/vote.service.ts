@@ -1,7 +1,8 @@
-import { Vote } from '../../core/models/vote.model';
 import { Service } from 'typedi';
 import { Repository } from 'typeorm';
 import { InjectRepository } from 'typeorm-typedi-extensions';
+
+import { Vote } from '@models/vote.model';
 
 @Service()
 export class VoteService {
@@ -11,14 +12,11 @@ export class VoteService {
     await this.repository.save(vote);
   }
 
+  async get(): Promise<Vote[]> {
+    return await this.repository.find({});
+  }
+
   async getByContestId(contest_id: string): Promise<Vote[]> {
-    return await this.repository.find({
-      where: {
-        contest_id,
-      },
-      order: {
-        date: 'DESC',
-      },
-    });
+    return await this.repository.find({ contest_id });
   }
 }

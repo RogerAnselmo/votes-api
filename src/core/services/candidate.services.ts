@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 import { Repository } from 'typeorm';
 import { InjectRepository } from 'typeorm-typedi-extensions';
-import { Candidate } from '../models/candidate.model';
+import { Candidate } from '@models/candidate.model';
 
 @Service()
 export class CandidateService {

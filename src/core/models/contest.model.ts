@@ -6,8 +6,8 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Candidate } from './candidate.model';
-import { Vote } from './vote.model';
+import { Candidate } from '@models/candidate.model';
+import { Vote } from '@models/vote.model';
 
 @Entity()
 export class Contest {

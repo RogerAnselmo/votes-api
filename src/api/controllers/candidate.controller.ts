@@ -1,5 +1,5 @@
-import { Candidate } from '../../core/models/candidate.model';
-import { CandidateService } from '../../core/services/candidate.services';
+import { Candidate } from '@models/candidate.model';
+import { CandidateService } from '@services/candidate.services';
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
 

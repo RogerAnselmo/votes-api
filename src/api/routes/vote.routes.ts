@@ -1,5 +1,5 @@
-import { VoteController } from 'api/controllers/vote.controller';
-import { Request, Response, Router } from 'express';
+import { VoteController } from '@controllers/vote.controller';
+import { NextFunction, Request, Response, Router } from 'express';
 import Container from 'typedi';
 
 const baseUrl = '/votes';
@@ -8,6 +8,13 @@ const voteRoutes = Router();
 
 voteRoutes.post(baseUrl, (req: Request, res: Response) =>
   controller.post(req, res),
+);
+
+voteRoutes.route(`${baseUrl}`).get(
+  (req: Request, res: Response, next: NextFunction) => {
+    next();
+  },
+  (req: Request, res: Response) => controller.get(req, res),
 );
 
 voteRoutes.get(`${baseUrl}/contest/:id`, (req: Request, res: Response) =>

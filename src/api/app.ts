@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
-import { EnvConfigValues } from '../infra/config/evironment';
-import Routes from './routes';
+import { EnvConfigValues } from '@config/evironment';
+import Routes from '@routes/index';
 
 const app: Application = express();
 app

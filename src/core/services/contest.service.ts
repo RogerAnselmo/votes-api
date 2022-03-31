@@ -1,4 +1,4 @@
-import { Contest } from '../../core/models/contest.model';
+import { Contest } from '@models/contest.model';
 import { Service } from 'typedi';
 import { Repository } from 'typeorm';
 import { InjectRepository } from 'typeorm-typedi-extensions';

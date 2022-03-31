@@ -1,4 +1,4 @@
-import { ContestController } from '../controllers/contest.controller';
+import { ContestController } from '@controllers/contest.controller';
 import { Router } from 'express';
 import Container from 'typedi';
 import { Request, Response } from 'express';

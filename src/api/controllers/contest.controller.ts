@@ -1,5 +1,5 @@
 
-import { ContestServcie } from '../../core/services/contest.service';
+import { ContestServcie } from '@services/contest.service';
 import { Request, Response } from 'express';
 import { Service } from 'typedi';
 

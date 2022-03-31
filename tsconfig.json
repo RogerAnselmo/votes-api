@@ -11,7 +11,16 @@
         "esModuleInterop": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "paths": {
+            "@app": ["/api/app"],
+            "@controllers/*": ["api/controllers/*"],
+            "@routes/*": ["api/routes/*"],
+            "@models/*": ["core/models/*"],
+            "@services/*": ["core/services/*"],
+            "@config/*": ["infra/config/*"],
+            "@infra/*": ["infra/*"]
+        }
     },
     "exclude": [
         "node_modules"
